@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './notes.css';
 
-class Notes extends Component {
+class NotesList extends Component {
   constructor() {
     super();
     this.state = {
@@ -17,16 +17,18 @@ class Notes extends Component {
 
   render() {
     return (
-      <div>
-        <h2>notes</h2>
-        <ul>
-          {this.state.notes.map(note =>
-            <li key={note.id}> { note.body }</li>
-          )}
-        </ul>
+      <div className='container'>
+        <div className='noteList'>
+          <h2>Notes</h2>
+          <ul>
+            {this.state.notes.map(note =>
+              <li key={note.id}> { note.body }</li>
+            )}
+          </ul>
+        </div>
       </div>
     );
   }
 }
 
-export default Notes;
+export default NotesList;

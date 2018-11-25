@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './pickle_rick_rab.svg';
 import './App.css';
-import Notes from './components/notes/notes.js'
+import Notes from './containers/notesList.js'
 
 class App extends Component {
   render() {
