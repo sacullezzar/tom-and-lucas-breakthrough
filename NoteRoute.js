@@ -1,7 +1,7 @@
 const express = require('express')
 const NoteRouter = express.Router()
 
-const Note = require('./Note')
+const note = require('./Note')
 
 NoteRouter.route('/create').post(function (req, res) {
   const note = new Note(req.quote)

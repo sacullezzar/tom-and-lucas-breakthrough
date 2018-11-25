@@ -10,9 +10,10 @@ class NotesList extends Component {
   }
 
   componentDidMount() { //
-    fetch('/api/notes')
-      .then(res => res.json())
-      .then(notes => this.setState({notes}, () => console.log('notes fetched...', notes)));
+    fetch('/notes')
+    .then(results => {
+      console.log(results.json())
+    })
   }
 
   render() {

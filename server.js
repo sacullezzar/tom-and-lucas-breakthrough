@@ -2,9 +2,12 @@ const express = require('express')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const NoteRoute = require('./NoteRoute')
+const cors = require('cors')
 
 const app = express();
 const port = 5000;
+
+app.use(cors())
 
 const config = require('./db')
 
@@ -19,16 +22,13 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use('/quotes', NoteRoute)
-
-app.get('/api/notes', (req, res) => {
-  const notes = [
-    {id: 1, body: 'Doe'},
-    {id: 2, body: 'Smith'},
-    {id: 3, body: 'Swanson'}
-  ]
-
-  res.json(notes);
-})
+app.listen(port, () => {
+  console.log(`Server started on port ${port}`)
+app.get('/api/notes', cors(), function(req, res) {
+  Note.find({}).then(eachOne => {
+    res.json(eachOne);
+    })
+  })
 
 app.post('/quote/add', (req, res, next) => {
 
@@ -41,12 +41,7 @@ app.post('/quote/add', (req, res, next) => {
           if(err) {
             console.log(err);
           }
-
-
-          res.send('name added successfully');
+          res.send('note added successfully');
         });
       });
-
-app.listen(port, () => {
-  console.log(`Server started on port ${port}`)
 })

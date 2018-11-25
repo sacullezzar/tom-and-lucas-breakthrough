@@ -12,4 +12,6 @@ const Note = new Schema({
   collection: 'quotes'
 })
 
-module.exports = mongoose.model('Note', Note)
+const Noteform = mongoose.model('Note', Note)
+
+module.exports = Noteform
