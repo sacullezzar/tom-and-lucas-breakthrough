@@ -1,3 +1,13 @@
+```npm install react-testing-library```
+```npm install dom-testing-library```
+
+touch db.js at root level with:
+
+```module.exports = {
+  DB: 'mongodb://<dbUserName>:<dbUserPassword>@ds113452.mlab.com:13452/mongotrial'
+}```
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

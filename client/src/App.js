@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import logo from './pickle_rick_rab.svg';
 import './App.css';
-import Notes from './containers/notesList.js'
+import NotesList from './containers/notesList.js'
+import Button from './components/button'
 
 class App extends Component {
   render() {
@@ -21,7 +22,7 @@ class App extends Component {
             WubbaLubbaDubDuuuub!
           </a>
         </header>
-        <Notes />
+        <Button />
       </div>
     );
   }
